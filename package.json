@@ -1,7 +1,7 @@
 {
-    "name": "ui5.walkthrough",
+    "name": "calculatorapp",
     "version": "1.0.0",
-    "description": "The UI5 walkthrough application",
+    "description": "My own not so fancy calculator",
     "scripts": {
         "start": "ui5 serve -o index.html"
     }

@@ -1,0 +1,22 @@
+{
+    "Calculations":[
+        {
+            "FirstInput": 2,
+            "Operator": "-",
+            "SecondInput": 2,
+            "Result": 0
+        },
+        {
+            "FirstInput": 1,
+            "Operator": "*",
+            "SecondInput": 1,
+            "Result": 1
+        },
+        {
+            "FirstInput": 9,
+            "Operator": "+",
+            "SecondInput": 10,
+            "Result": 21
+        }
+    ]
+}
