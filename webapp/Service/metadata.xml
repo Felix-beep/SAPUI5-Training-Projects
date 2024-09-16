@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" 
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices m:DataServiceVersion="1.0"
+					   xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+		<Schema Namespace="Calculator.Models"
+            xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+            xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+			<EntityType Name="Calculation">
+				<Key>
+					<PropertyRef Name="FirstInput"/>
+					<PropertyRef Name="Operator"/>
+					<PropertyRef Name="SecondInput"/>
+					<PropertyRef Name="Result"/>
+				</Key>
+				<Property Name="FirstInput" Type="Edm.Int16" Nullable="false" MaxLength="40" FixedLength="false"
+						  Unicode="true"/>
+				<Property Name="Operator" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false"
+						  Unicode="true"/>
+				<Property Name="SecondInput" Type="Edm.Int16" Nullable="false"/>
+				<Property Name="Result" Type="Edm.Decimal" Precision="19" Scale="4"/>
+			</EntityType>
+            <EntityContainer Name="Calculations" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="Calculations" EntityType="Calculator.Models.Calculation"/>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,14 +1,24 @@
 {
     "_version": "1.58.0",
     "sap.app": {
-        "id": "ui5.calculator",
+        "id": "sap.ui.calculator.app",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
             "version": "1.0.0"
         },
         "title": "{{appTitle}}",
-        "description": "{{appDescription}}"
+        "description": "{{appDescription}}",
+        "dataSources": {
+            "calculationRemote": {
+                "uri": "/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "Service/metadata.xml"
+                }
+            }
+        }
     },
     "sap.ui5": {
         "_version": "1.1.0",
@@ -40,6 +50,10 @@
                     "fallbackLocale": "en"
                 },
                 "uri": "<uriRelativeToManifest>"
+            },
+            "CalcModel": {
+                "dataSource": "calculationRemote",
+                "type": "sap.ui.model.odata.v2.ODataModel"
             }
         },
         "rootView": {
@@ -64,14 +78,32 @@
             "routes": [
                 {
                     "pattern": "",
-                    "name": "calculator",
-                    "target": "calculator"
+                    "name": "mainView",
+                    "target": "mainView"
+                },
+                {
+                    "pattern": "Login",
+                    "name": "loginscreen",
+                    "target": "loginscreen"
+                },
+                {
+                    "pattern": "History",
+                    "name": "fullhistory",
+                    "target": "fullhistory"
                 }
             ],
             "targets": {
-                "calculator": {
-                    "viewId": "calculator",
-                    "viewName": "Calculator"
+                "mainView": {
+                    "viewId": "mainView",
+                    "viewName": "MainView"
+                },
+                "loginscreen": {
+                    "viewId": "loginscreen",
+                    "viewName": "Login"
+                },
+                "fullhistory": {
+                    "viewId": "fullhistory",
+                    "viewName": "History"
                 }
             }
         }

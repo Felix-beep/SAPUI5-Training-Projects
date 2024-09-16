@@ -1,0 +1,20 @@
+<mvc:View
+    controllerName="sap.ui.calculator.app.controller.MainView"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core">
+   
+   <Page title="{i18n>homePageTitle}" showHeader="true" showNavButton="true" titleAlignment="Center">
+
+    <customHeader>
+        <core:Fragment fragmentName="sap.ui.calculator.app.view.Fragments.Navbar" type="XML"/>
+    </customHeader>
+
+    <content>
+        <core:Fragment fragmentName="sap.ui.calculator.app.view.Fragments.Calculator" type="XML"/>
+        <core:Fragment fragmentName="sap.ui.calculator.app.view.Fragments.SessionHistory" type="XML"/>
+    </content>
+    </Page>
+
+   
+</mvc:View>

@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core">
+    <Panel class="sapUiResponsiveMargin" showHeader="false" width="auto">
+        <content>
+            <Table
+				id="Table"
+				items="{CalcModel>/Calculations}">
+				<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+                        <Title level="H3" text="{i18n>SessionHistoryTitle}"/>
+                        <ToolbarSpacer/>
+						<Button text="Full History" type="Emphasized" press=".navigateToHistory"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column ><Text text="Input 1" /></Column>
+					<Column ><Text text="Operator" /></Column>
+					<Column ><Text text="Input 2" /></Column>
+					<Column ><Text /></Column>
+					<Column ><Text text="Result" /></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{CalcModel>FirstInput}" />
+							<Text text="{CalcModel>Operator}" />
+							<Text text="{CalcModel>SecondInput}" />
+                            <Text text="=" />
+                            <Text text="{CalcModel>Result}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+        </content>
+    </Panel>
+    
+</core:FragmentDefinition>

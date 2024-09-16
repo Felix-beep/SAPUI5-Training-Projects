@@ -16,7 +16,8 @@ sap.ui.define([
                 calculation: {
                     Input1: "1",
                     Operator: "+",
-                    Input2: "2"
+                    Input2: "2",
+                    validOperation: true
                 }
             };
             var oModel = new JSONModel(oData);

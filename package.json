@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "My own not so fancy calculator",
     "scripts": {
-        "start": "ui5 serve -o index.html"
+        "start": "ui5 serve -o index.html",
+        "mock":  "ui5 serve -o Tests/mockServer.html"
     }
 }

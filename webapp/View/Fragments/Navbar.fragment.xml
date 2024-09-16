@@ -1,0 +1,27 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core">
+        <Bar>
+            <contentLeft>
+                <Button icon="sap-icon://nav-back" press=".onNavBack"/> 
+            </contentLeft>
+            <contentMiddle>
+                <Title level="H3" text="{i18n>homePageTitle}"/>
+            </contentMiddle>
+            <contentRight> 
+                <MenuButton
+                    icon="sap-icon://account"
+                    text="{impiegato>/matricola}">
+                    <Menu>
+                        <MenuItem 
+                            text="Login"
+                            press=".onLoginButtonClick"/>
+                        <MenuItem 
+                            text="Logout"
+                            press=".onLoginButtonClick"/>
+                    </Menu>
+                </MenuButton>
+            </contentRight>
+        </Bar>
+</core:FragmentDefinition>
