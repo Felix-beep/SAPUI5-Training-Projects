@@ -8,7 +8,7 @@
                 <FlexBox width="80%" justifyContent="SpaceBetween">
                     <FlexBox direction="Column" width="30%">
                         <Label text="First Input:" labelFor="Input1"/>
-                        <Input id="Input1" value="{path: '/calculationEx/Input1'}" type="Number"/>
+                        <Input id="Input1" value="{path: 'calculationExample>/Input1'}" type="Number"/>
                     </FlexBox>
                     <FlexBox direction="Column" width="auto">
                         <Label text="Operator:" labelFor="Operator" />
@@ -17,13 +17,13 @@
                             type="Text" 
                             valueStateText="Operator must be a valid email address." 
                             value=  "{ 
-                                path: '/calculationEx/Operator', 
-                                type: '.customOperatorType' 
+                                path: 'calculationExample>/Operator', 
+                                type: 'type.CustomOperator' 
                             }" />
                     </FlexBox>
                     <FlexBox direction="Column" width="30%">
                         <Label text="Second Input:" labelFor="Input2"/>
-                        <Input id="Input2" value="{path: '/calculationEx/Input2' }" type="Number"/>
+                        <Input id="Input2" value="{path: 'calculationExample>/Input2' }" type="Number"/>
                     </FlexBox>
                 </FlexBox>
                 <FlexBox width="20%" direction="Column">
@@ -34,7 +34,7 @@
                             icon="sap-icon://world"
                             text="{i18n>Calculate}"
                             press=".calculateResult"
-                            enabled="{/calculationEx/validOperation}"
+                            enabled="{calculationExample>/validOperation}"
                             class="sapUiLargeMarginBegin"/>
                     </FlexBox>
                 </FlexBox>

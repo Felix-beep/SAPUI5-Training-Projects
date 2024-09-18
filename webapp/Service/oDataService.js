@@ -33,6 +33,12 @@ sap.ui.define([
             });
         },
 
+        addOData: function (oNewData, name = "") {
+            var mNewJson = new JSONModel(oNewData);
+
+            _owner.setModel(mNewJson, name);
+        },
+
         appendToOData: function (oNewData) {
             var oCurrentData = _model().getData();
 

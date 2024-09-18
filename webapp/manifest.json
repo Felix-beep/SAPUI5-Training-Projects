@@ -71,6 +71,12 @@
             "Restableentry": {
                 "type": "sap.ui.model.json.JSONModel",
                 "preload": false
+            },
+            "calculationExample": {
+                "type": "sap.ui.model.json.JSONModel"
+            },
+            "CalculationResultTable": {
+                "type": "sap.ui.model.json.JSONModel"
             }
         },
         "rootView": {

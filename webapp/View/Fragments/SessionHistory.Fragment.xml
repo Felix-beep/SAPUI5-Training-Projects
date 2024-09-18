@@ -1,12 +1,16 @@
 <core:FragmentDefinition
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:core="sap.ui.core">
+    xmlns:core="sap.ui.core"
+	xmlns:m="sap.m">
     <Panel class="sapUiResponsiveMargin" width="auto">
         <content>
             <Table
 				id="Table"
-				items="{/calculations}">
+				items="{CalculationResultTable>/}">
+				<noData>
+					<m:BusyIndicator class="sapUiMediumMargin"/>
+				</noData>
 				<headerToolbar>
 					<OverflowToolbar id="otbSubheader">
                         <Title level="H3" text="{i18n>SessionHistoryTitle}"/>
@@ -24,11 +28,11 @@
 				<items>
 					<ColumnListItem>
 						<cells>
-							<Text text="{ZInput1}" />
-							<Text text="{ZOperator}" />
-							<Text text="{ZInput2}" />
+							<Text text="{CalculationResultTable>ZInput1}" />
+							<Text text="{CalculationResultTable>ZOperator}" />
+							<Text text="{CalculationResultTable>ZInput2}" />
                             <Text text="=" />
-                            <Text text="{ZResult}" />
+                            <Text text="{CalculationResultTable>ZResult}" />
 						</cells>
 					</ColumnListItem>
 				</items>

@@ -22,25 +22,31 @@ sap.ui.define([
 
             oDataService.init(this);
 
+            /*oDataService.addOData(
+                {
+                    calculations: [
+                        
+                    ]
+                }, "CalculationResultTable");*/
+
             oDataService.getODataFromModel("/RestableentrySet")
                 .then(function(oData) {
                     console.log("Restable Data fetched successfully");
                     oData = oDataService.wrapJson(oData, "calculations");
-                    oDataService.appendToOData(oData);
+                    oDataService.addOData(oData, "CalculationResultTable");
+                    console.log("test");
                 })
                 .catch(function(oError) {
                     console.error("Failed to fetch model: ", oError);
                 });
             
-            oDataService.appendToOData(
+            oDataService.addOData(
             {
-                calculationEx: {
-                    Input1: "1",
-                    Operator: "+",
-                    Input2: "2",
-                    validOperation: true
-                }
-            });
+                Input1: "1",
+                Operator: "+",
+                Input2: "2",
+                validOperation: true
+            }, "calculationExample");
         }
 
     });
