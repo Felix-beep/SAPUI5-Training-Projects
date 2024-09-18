@@ -4,7 +4,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core">
    
-   <Page title="{i18n>homePageTitle}" showHeader="true" showNavButton="true" titleAlignment="Center">
+   <Page title="{i18n>homePageTitle}" showHeader="true" showNavButton="true">
 
     <customHeader>
         <core:Fragment fragmentName="sap.ui.calculator.app.view.Fragments.Navbar" type="XML"/>

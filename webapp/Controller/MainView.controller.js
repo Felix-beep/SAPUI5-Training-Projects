@@ -1,22 +1,34 @@
 ValidOperators = [ "+", "-", "*", "/", ":", "P", "M", "%"];
 
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
 	"sap/ui/model/SimpleType",
 	"sap/ui/model/ValidateException",
 	"sap/ui/core/Messaging",
-	"sap/ui/core/routing/History"
-], function (Controller, MessageToast, SimpleType, ValidateException, Messaging, History) {
+    "sap/ui/calculator/app/Controller/Navbar.controller",
+    "sap/ui/calculator/app/Service/oDataService"
+], function (MessageToast, SimpleType, ValidateException, Messaging, Navbar, oDataService) {
     "use strict"
 
-    return Controller.extend("sap.ui.calculator.app.Controller.MainView", {
+    return Navbar.extend("sap.ui.calculator.app.Controller.MainView", {
 
         onInit: function () {
 			var oView = this.getView(), oMM = Messaging;
 
 			oMM.registerObject(oView.byId("Operator"), true);
+
+            oDataService.getOData("calculations");
         },        
+
+        /*initTable: function () {
+            var Table = sap.ui.core.byId("Table");
+            const tableModel = new sap.ui.model.json.JSONModel({ items: parsedData });
+            yourTable.setModel(tableModel);
+            yourTable.bindItems({
+                path: '/calculations',
+                template: metadata // your table item template
+            });
+        },*/
 
         calculateResult: function () {
 
@@ -63,26 +75,6 @@ sap.ui.define([
 
 			return bValidationError;
 		},
-
-        onNavBack: function () {
-			const oHistory = History.getInstance();
-			const sPreviousHash = oHistory.getPreviousHash();
-
-
-			if (sPreviousHash !== undefined) {
-				window.history.go(-1);
-                console.log("Navigating to last screen");
-			} else {
-				const oRouter = this.getOwnerComponent().getRouter();
-				oRouter.navTo("mainView");
-                console.log("Navigating to home screen");
-			}
-		},
-
-        onLoginButtonClick: function (oValue) {
-            var oRouter = this.getOwnerComponent().getRouter();
-            oRouter.navTo("loginscreen");
-        },
 
         navigateToHistory: function (oValue) {
             var oRouter = this.getOwnerComponent().getRouter();

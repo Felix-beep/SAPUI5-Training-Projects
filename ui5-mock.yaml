@@ -8,11 +8,6 @@ server:
       afterMiddleware: compression
       configuration:
         ignoreCertError: false
-        backend:
-          - path: /sap
-            url: https://s4h.rp.concircle.com
-            client: "100"
-            destination: S4H
         ui5:
           path:
             - /resources
@@ -29,3 +24,13 @@ server:
       configuration:
         component: sap.ui.calculator.app
         ui5Theme: sap_fiori_3
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: ''
+            metadataPath: ./webapp/localService/metadata.xml
+            mockdataPath: ./webapp/localService/data
+            generateMockData: true
+        annotations: []

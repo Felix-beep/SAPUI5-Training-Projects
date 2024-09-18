@@ -2,11 +2,11 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core">
-    <Panel class="sapUiResponsiveMargin" showHeader="false" width="auto">
+    <Panel class="sapUiResponsiveMargin" width="auto">
         <content>
             <Table
 				id="Table"
-				items="{CalcModel>/Calculations}">
+				items="{/calculations}">
 				<headerToolbar>
 					<OverflowToolbar id="otbSubheader">
                         <Title level="H3" text="{i18n>SessionHistoryTitle}"/>
@@ -24,11 +24,11 @@
 				<items>
 					<ColumnListItem>
 						<cells>
-							<Text text="{CalcModel>FirstInput}" />
-							<Text text="{CalcModel>Operator}" />
-							<Text text="{CalcModel>SecondInput}" />
+							<Text text="{ZInput1}" />
+							<Text text="{ZOperator}" />
+							<Text text="{ZInput2}" />
                             <Text text="=" />
-                            <Text text="{CalcModel>Result}" />
+                            <Text text="{ZResult}" />
 						</cells>
 					</ColumnListItem>
 				</items>
